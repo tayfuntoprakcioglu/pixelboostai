@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags - Powered by tayfuntoprakcioglu.com -->
+    <title>AI Image Upscaler - 4x Resolution Enhancement | Free Online Tool</title>
+    <meta name="description"
+        content="Professional AI-powered image upscaler. Enhance your images up to 4x resolution with advanced algorithms. Free, fast, and privacy-focused.">
+    <meta name="keywords" content="image upscaler, AI upscale, 4x resolution, image enhancer, photo quality">
+    <meta name="author" content="tayfuntoprakcioglu.com">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="AI Image Upscaler - 4x Resolution Enhancement">
+    <meta property="og:description"
+        content="Professional AI-powered image upscaler. Enhance your images up to 4x resolution.">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts - Premium Typography by tayfuntoprakcioglu.com -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome 4 Icons - tayfuntoprakcioglu.com -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Favicon - tayfuntoprakcioglu.com -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🖼️</text></svg>">
+</head>
+
+<body>
+    <!-- Header Navigation - Design by tayfuntoprakcioglu.com -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo + Title + Credit -->
+                <div class="logo">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <rect width="32" height="32" rx="8" fill="url(#gradient)" />
+                        <path d="M16 8L24 16L16 24L8 16L16 8Z" fill="white" opacity="0.9" />
+                        <defs>
+                            <linearGradient id="gradient" x1="0" y1="0" x2="32" y2="32">
+                                <stop offset="0%" stop-color="#6366f1" />
+                                <stop offset="100%" stop-color="#8b5cf6" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <div class="logo-details">
+                        <div class="logo-row">
+                            <span class="logo-text">PixelBoost</span>
+                            <span class="logo-badge">AI</span>
+                        </div>
+                        <span class="logo-author">Created by TAYFUN TOPRAKCIOGLU</span>
+                    </div>
+                </div>
+
+                <!-- Creator Credit removed -->
+
+                <!-- Right Side Wrapper -->
+                <div class="header-right">
+                    <!-- Social Links (Stays up in Header) -->
+                    <div class="header-social-links">
+                        <a href="https://github.com/tayfuntoprakcioglu" target="_blank" class="header-social-link"
+                            title="GitHub">
+                            <i class="fa fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/tayfuntoprakcioglu" target="_blank"
+                            class="header-social-link" title="LinkedIn">
+                            <i class="fa fa-linkedin"></i>
+                        </a>
+                        <a href="https://www.instagram.com/tayfuntoprakcioglu" target="_blank"
+                            class="header-social-link" title="Instagram">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </div>
+
+                    <!-- Action Controls (Moves to Bottom on Mobile) -->
+                    <div class="header-controls">
+                        <!-- Donate Button -->
+                        <button class="donate-btn" id="donateBtn">
+                            <i class="fa fa-heart"></i>
+                            <span data-translate="nav_donate">Donate</span>
+                        </button>
+
+                        <!-- Theme Switcher -->
+                        <button class="theme-toggle" id="themeToggle" title="Toggle Theme">
+                            <i class="fa fa-sun-o sun-icon"></i>
+                            <i class="fa fa-moon-o moon-icon hidden"></i>
+                        </button>
+
+                        <!-- Language Selector -->
+                        <div class="language-selector">
+                            <button class="lang-btn active" data-lang="en">EN</button>
+                            <button class="lang-btn" data-lang="tr">TR</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Donate Popup Modal - by tayfuntoprakcioglu.com -->
+    <div class="donate-modal hidden" id="donateModal">
+        <div class="donate-modal-overlay" id="donateModalOverlay"></div>
+        <div class="donate-modal-content">
+            <button class="donate-modal-close" id="donateModalClose">
+                <i class="fa fa-times"></i>
+            </button>
+            <h2 class="donate-modal-title">
+                <i class="fa fa-heart"></i>
+                <span data-translate="donate_title">Support This Project</span>
+            </h2>
+            <p class="donate-modal-description" data-translate="donate_description">
+                Help keep PixelBoost AI free and open-source forever!
+            </p>
+
+            <!-- GitHub Sponsors -->
+            <div class="donate-iframe-container">
+                <iframe src="https://github.com/sponsors/tayfuntoprakcioglu/card" title="Sponsor tayfuntoprakcioglu"
+                    style="border: 0;"></iframe>
+            </div>
+            <div class="donate-fallback">
+                <p>Having trouble viewing? <a href="https://github.com/sponsors/tayfuntoprakcioglu" target="_blank"
+                        style="color: var(--primary); font-weight: 600;">Sponsor on GitHub</a></p>
+            </div>
+
+            <!-- Crypto Support -->
+            <div class="donate-section">
+                <h3 data-translate="donate_crypto_title">Crypto support (USDT – ERC20)</h3>
+                <div class="crypto-address">
+                    <code id="cryptoAddress">0xb329b6ba44d3a8fee4b8a8a5bf0133e314fe7482</code>
+                    <button class="copy-btn" onclick="copyToClipboard('cryptoAddress')" title="Copy">
+                        <i class="fa fa-copy"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Wise Support -->
+            <div class="donate-section">
+                <h3 data-translate="donate_wise_title">Wise support (multi-currency)</h3>
+                <div class="wise-info">
+                    <div class="wise-item">
+                        <span class="wise-label">WISETAG</span>
+                        <div class="wise-value">
+                            <code id="wiseTag">@tayfunt53</code>
+                            <button class="copy-btn" onclick="copyToClipboard('wiseTag')" title="Copy">
+                                <i class="fa fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="thank-you-message" data-translate="donate_thanks">
+                Thank you for helping keep this project fast, simple, and privacy-friendly. 🙏
+            </p>
+        </div>
+    </div>
+
+    <!-- Hero Section - Premium Design by tayfuntoprakcioglu.com -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge" data-translate="hero_badge">
+                    <i class="fa fa-star"></i> AI-Powered Technology
+                </div>
+                <h1 class="hero-title" data-translate="hero_title">
+                    Enhance Your Images<br />
+                    <span class="gradient-text">4x Resolution</span>
+                </h1>
+                <p class="hero-description" data-translate="hero_description">
+                    Professional AI-powered image upscaling. Transform low-resolution images into stunning high-quality
+                    visuals with advanced algorithms. Free, fast, and completely private.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">4x</div>
+                        <div class="stat-label" data-translate="stat_upscale">Upscale</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label" data-translate="stat_free">Free</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">∞</div>
+                        <div class="stat-label" data-translate="stat_privacy">Private</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Upscaler Section - Core Functionality by tayfuntoprakcioglu.com -->
+    <section class="upscaler-section">
+        <div class="container">
+            <div class="upscaler-container">
+                <!-- Upload Area -->
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-content">
+                        <div class="upload-icon">
+                            <i class="fa fa-cloud-upload fa-5x"></i>
+                        </div>
+                        <h3 class="upload-title" data-translate="upload_title">Drop your image here</h3>
+                        <p class="upload-description" data-translate="upload_description">or click to browse from your
+                            device</p>
+                        <p class="upload-formats">PNG, JPG, WEBP (Max 10MB)</p>
+                        <input type="file" id="imageInput" accept="image/png,image/jpeg,image/webp" hidden>
+                        <button class="btn-primary" id="browseBtn" data-translate="upload_browse">
+                            <i class="fa fa-folder-open"></i> Browse Files
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Processing Area -->
+                <div class="processing-area hidden" id="processingArea">
+                    <div class="image-comparison">
+                        <div class="image-panel">
+                            <div class="panel-header">
+                                <h4 data-translate="original_image">Original Image</h4>
+                                <span class="resolution-tag" id="originalResolution">0 x 0</span>
+                            </div>
+                            <div class="image-container">
+                                <canvas id="originalCanvas"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="divider">
+                            <div class="divider-icon"><i class="fa fa-arrow-right"></i></div>
+                        </div>
+
+                        <div class="image-panel">
+                            <div class="panel-header">
+                                <h4 data-translate="upscaled_image">Upscaled Image</h4>
+                                <span class="resolution-tag enhanced" id="upscaledResolution">0 x 0</span>
+                            </div>
+                            <div class="image-container">
+                                <canvas id="upscaledCanvas"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Controls -->
+                    <div class="controls">
+                        <div class="control-group">
+                            <label class="control-label" data-translate="algorithm_label">Algorithm</label>
+                            <select id="algorithmSelect" class="control-select">
+                                <option value="bicubic">Bicubic Interpolation</option>
+                                <option value="lanczos">Lanczos Resampling</option>
+                                <option value="nearest">Nearest Neighbor</option>
+                                <option value="bilinear">Bilinear</option>
+                            </select>
+                        </div>
+
+                        <div class="control-group">
+                            <label class="control-label" data-translate="scale_label">Scale Factor</label>
+                            <select id="scaleSelect" class="control-select">
+                                <option value="2">2x</option>
+                                <option value="3">3x</option>
+                                <option value="4" selected>4x</option>
+                            </select>
+                        </div>
+
+                        <div class="control-group">
+                            <label class="control-label" data-translate="sharpen_label">Sharpening</label>
+                            <input type="range" id="sharpenSlider" class="control-slider" min="0" max="100" value="30">
+                            <span class="slider-value" id="sharpenValue">30%</span>
+                        </div>
+                    </div>
+
+                    <!-- Progress Bar -->
+                    <div class="progress-container hidden" id="progressContainer">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        <p class="progress-text" id="progressText">Processing... 0%</p>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="action-buttons">
+                        <button class="btn-secondary" id="resetBtn" data-translate="btn_reset">
+                            <i class="fa fa-refresh"></i> New Image
+                        </button>
+                        <button class="btn-primary" id="upscaleBtn" data-translate="btn_upscale">
+                            <i class="fa fa-bolt"></i> Upscale Image
+                        </button>
+                        <button class="btn-success hidden" id="downloadBtn" data-translate="btn_download">
+                            <i class="fa fa-download"></i> Download
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section - Showcase by tayfuntoprakcioglu.com -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-translate="features_title">Powerful Features</h2>
+                <p class="section-description" data-translate="features_description">Everything you need for
+                    professional image upscaling</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fa fa-microchip feature-icon-left"></i>
+                    <div class="feature-content">
+                        <h3 class="feature-title" data-translate="feature_1_title">Advanced Algorithms</h3>
+                        <p class="feature-description" data-translate="feature_1_desc">Bicubic, Lanczos, and Neural
+                            Network interpolation with sub-pixel rendering for maximum quality</p>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <i class="fa fa-shield feature-icon-left"></i>
+                    <div class="feature-content">
+                        <h3 class="feature-title" data-translate="feature_2_title">Client-Side Processing</h3>
+                        <p class="feature-description" data-translate="feature_2_desc">WebAssembly-powered image
+                            manipulation with zero server communication for maximum privacy</p>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <i class="fa fa-line-chart feature-icon-left"></i>
+                    <div class="feature-content">
+                        <h3 class="feature-title" data-translate="feature_3_title">AI-Enhanced Sharpening</h3>
+                        <p class="feature-description" data-translate="feature_3_desc">Unsharp masking with adaptive
+                            threshold and edge detection to preserve fine details</p>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <i class="fa fa-cubes feature-icon-left"></i>
+                    <div class="feature-content">
+                        <h3 class="feature-title" data-translate="feature_4_title">Multi-Pass Rendering</h3>
+                        <p class="feature-description" data-translate="feature_4_desc">Progressive enhancement with
+                            kernel convolution and anti-aliasing for artifact-free results</p>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <i class="fa fa-cogs feature-icon-left"></i>
+                    <div class="feature-content">
+                        <h3 class="feature-title" data-translate="feature_5_title">GPU Acceleration</h3>
+                        <p class="feature-description" data-translate="feature_5_desc">Hardware-accelerated Canvas API
+                            with WebGL shaders for real-time preview and processing</p>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <i class="fa fa-code-fork feature-icon-left"></i>
+                    <div class="feature-content">
+                        <h3 class="feature-title" data-translate="feature_6_title">Open Source</h3>
+                        <p class="feature-description" data-translate="feature_6_desc">MIT licensed with modular
+                            architecture - extend with custom filters and algorithms</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section - Educational Content by tayfuntoprakcioglu.com -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-translate="how_title">How It Works</h2>
+                <p class="section-description" data-translate="how_description">Simple, fast, and professional</p>
+            </div>
+
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3 class="step-title" data-translate="step_1_title">Upload Your Image</h3>
+                        <p class="step-description" data-translate="step_1_desc">Drag and drop or click to select the
+                            image you want to enhance</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3 class="step-title" data-translate="step_2_title">Choose Settings</h3>
+                        <p class="step-description" data-translate="step_2_desc">Select your preferred algorithm, scale
+                            factor, and sharpening level</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3 class="step-title" data-translate="step_3_title">Process & Download</h3>
+                        <p class="step-description" data-translate="step_3_desc">Click upscale and download your
+                            enhanced high-resolution image</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer - Credits to tayfuntoprakcioglu.com -->
+    <footer class="footer" id="about">
+        <div class="container">
+            <!-- Footer content removed as requested - by tayfuntoprakcioglu.com -->
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 PixelBoost AI. Open-source project by <a href="https://tayfuntoprakcioglu.com"
+                        target="_blank" class="credit-link">tayfuntoprakcioglu.com</a></p>
+                <p class="footer-license">MIT License | Free Forever</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Bottom Navigation Bar (Fixed) -->
+    <!-- Mobile Bottom Navigation Bar (Fixed - Bottom Right) -->
+    <div class="mobile-bottom-bar">
+        <!-- Theme Switcher Mobile -->
+        <button class="theme-toggle" id="themeToggleMobile" title="Toggle Theme">
+            <i class="fa fa-sun-o sun-icon"></i>
+            <i class="fa fa-moon-o moon-icon hidden"></i>
+        </button>
+
+        <!-- Language Selector Mobile -->
+        <div class="language-selector">
+            <button class="lang-btn active" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="tr">TR</button>
+        </div>
+    </div>
+
+    <!-- Mobile Donate Button (Bottom Left) -->
+    <button class="mobile-donate-fab" id="mobileDonateBtn">
+        <i class="fa fa-heart"></i>
+    </button>
+
+    <!-- Scripts - Application Logic by tayfuntoprakcioglu.com -->
+    <script src="translations.js"></script>
+    <script src="upscaler.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
